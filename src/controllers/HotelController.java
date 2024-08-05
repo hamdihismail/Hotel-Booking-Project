@@ -39,4 +39,15 @@ public class HotelController {
     public void deleteHotel(@PathVariable Long id) {
         hotelService.deleteHotel(id);
     }
+    // New end point for searching hotels by name
+    @GetMapping("/search")
+    public List<Hotel> searchHotels(@RequestParam("name") String name) {
+        return hotelService.searchHotelsByName(name);
+    }
+
+    // New end point for filtering hotels by address
+    @GetMapping("/filter")
+    public List<Hotel> filterHotels(@RequestParam("address") String address) {
+        return hotelService.filterHotelsByAddress(address);
+    }
 }

@@ -1,5 +1,7 @@
 package src.models;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,22 +9,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+import java.time.LocalDate;
+
 @Entity
-public class Room {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
-    private double price;
-    private boolean available;
+
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private int numberOfGuests;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    @JoinColumn(name = "room_id")
+    private Room room;
 
-	public void setId(Long id2) {
-		this.id = id;	
-	}
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     // Getters and setters
 }

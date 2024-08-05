@@ -21,5 +21,9 @@ public class Hotel {
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
     private List<Room> rooms;
 
+	public void setId(Long id2) {
+		this.id = id;
+	}
+
     // Getters and setters
 }
