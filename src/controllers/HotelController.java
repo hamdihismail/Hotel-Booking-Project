@@ -45,9 +45,9 @@ public class HotelController {
         return hotelService.searchHotelsByName(name);
     }
 
-    // New end point for filtering hotels by address
+    // New end point for filtering hotels by city
     @GetMapping("/filter")
-    public List<Hotel> filterHotels(@RequestParam("address") String address) {
-        return hotelService.filterHotelsByAddress(address);
+    public List<Hotel> filterHotels(@RequestParam("city") String city) {
+        return hotelService.filterHotelsByCity(city);
     }
 }

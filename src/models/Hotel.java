@@ -15,15 +15,15 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String address;
+    private String city;  // Changed from address to city
     private String contactInfo;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
     private List<Room> rooms;
 
-	public void setId(Long id2) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     // Getters and setters
 }

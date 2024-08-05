@@ -33,7 +33,7 @@ public class HotelService {
         return hotelRepository.findByName(name);
     }
 
-    public List<Hotel> filterHotelsByAddress(String address) {
-        return hotelRepository.findByAddressContaining(address);
+    public List<Hotel> filterHotelsByCity(String city) {
+        return hotelRepository.findByCityContaining(city);
     }
 }
