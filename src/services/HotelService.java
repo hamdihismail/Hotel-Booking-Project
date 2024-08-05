@@ -1,7 +1,6 @@
 package src.services;
 
 import src.models.Hotel;
-
 import src.Repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +27,13 @@ public class HotelService {
 
     public void deleteHotel(Long id) {
         hotelRepository.deleteById(id);
+    }
+    // New methods for searching and filtering
+    public List<Hotel> searchHotelsByName(String name) {
+        return hotelRepository.findByName(name);
+    }
+
+    public List<Hotel> filterHotelsByAddress(String address) {
+        return hotelRepository.findByAddressContaining(address);
     }
 }

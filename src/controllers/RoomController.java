@@ -39,4 +39,15 @@ public class RoomController {
     public void deleteRoom(@PathVariable Long id) {
         roomService.deleteRoom(id);
     }
+    // New end point for filtering rooms by type
+    @GetMapping("/filter/type")
+    public List<Room> filterRoomsByType(@RequestParam("type") String type) {
+        return roomService.filterRoomsByType(type);
+    }
+
+    // New end point for filtering rooms by price range
+    @GetMapping("/filter/price")
+    public List<Room> filterRoomsByPrice(@RequestParam("minPrice") double minPrice, @RequestParam("maxPrice") double maxPrice) {
+        return roomService.filterRoomsByPriceRange(minPrice, maxPrice);
+    }
 }

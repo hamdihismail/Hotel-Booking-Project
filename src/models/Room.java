@@ -20,5 +20,9 @@ public class Room {
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
+	public void setId(Long id2) {
+		this.id = id;	
+	}
+
     // Getters and setters
 }

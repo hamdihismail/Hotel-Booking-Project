@@ -28,4 +28,12 @@ public class RoomService {
     public void deleteRoom(Long id) {
         roomRepository.deleteById(id);
     }
+	// New methods for searching and filtering
+    public List<Room> filterRoomsByType(String type) {
+        return roomRepository.findByType(type);
+    }
+
+    public List<Room> filterRoomsByPriceRange(double minPrice, double maxPrice) {
+        return roomRepository.findByPriceBetween(minPrice, maxPrice);
+    }
 }

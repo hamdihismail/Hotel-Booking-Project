@@ -1,7 +1,0 @@
-export const SIDEBAR_OPEN = 'SIDEBAR_OPEN';
-export const SIDEBAR_CLOSE = 'SIDEBAR_CLOSE';
-export const DARKMODE_ON = 'DARKMODE_ON';
-export const LIGHTMODE_ON = 'LIGHTMODE_ON';
-export const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS';
-export const LOAD_DATA_BEGIN = 'LOAD_DATA_BEGIN';
-export const LOAD_DATA_ERROR = 'LOAD_DATA_ERROR';
