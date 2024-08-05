@@ -12,6 +12,12 @@ Variables
   /* Dropdown menu  */
   --bordrclr-dropdown-active: hsla(242, 48%, 58%, 1);
   /* general styles */
+  --accent-: #ccc;
+  --sec2: #c9beb3;
+  --background: #1d1d1d;
+  --sec: #c49c74;
+  --primery: #252525;
+  --text-baby: #f6f6f6;
   --clr-white: #f6f6f6;
   --clr-grey-1: #ccc;
   --clr-grey-2: #c9beb3;
@@ -57,8 +63,8 @@ Global Styles
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--clr-white);
-  color: var(--clr-grey-1);
+  background: url('./assets/background.jpeg');
+  color: var(--sec2);
   line-height: 1.5;
   font-size: 0.875rem;
   background-color: var(--clr-background);
@@ -232,7 +238,7 @@ button {
   height: 100%;
   background-color: var(--bgclr-overlay);
   opacity: 0.5;
-  z-index: 9;
+  z-index: -1;
 }
 .show-overlay {
   display: block;

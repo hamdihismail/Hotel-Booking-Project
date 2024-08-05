@@ -1,13 +1,22 @@
 // import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar, Footer, NewNav } from './components';
+import { Home, Error, About, Login, Hotels } from './pages';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hotel Booking App</h1>
-      </header>
-    </div>
+    <Router>
+      <NewNav />
+      <div className="overlay"></div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="login" element={<Login />} />
+        <Route path="hotels" element={<Hotels />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
