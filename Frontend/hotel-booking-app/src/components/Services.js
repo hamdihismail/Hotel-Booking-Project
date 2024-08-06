@@ -5,17 +5,13 @@ import { services } from '../utils/constants';
 const Services = () => {
   return (
     <Wrapper>
-      <article className="header">
-        <h3>
-          hotels <br />
-          in your area
-        </h3>
+      {/* <article className="header">
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro,
           libero praesentium! Quam ipsum dolore, tempore nemo quas ex sint
           minus?
         </p>
-      </article>
+      </article> */}
       <div className="services-center">
         {services.map((service) => {
           const { id, icon, title, text } = service;

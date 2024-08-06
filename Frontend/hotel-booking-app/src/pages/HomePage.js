@@ -4,15 +4,16 @@ import styled from 'styled-components';
 
 const HomePage = () => {
   return (
-    <main>
-      <Hero />
-      <Services />
-      <Contact />
-    </main>
+    <HomePageContainer>
+      <main>
+        {/* <div className="overlay"></div> */}
+        <Hero />
+        <Services />
+        <Contact />
+      </main>
+    </HomePageContainer>
   );
 };
 
-const HomePageContainer = styled.section`
-  background: url('../assets/logo.svg');
-`;
+const HomePageContainer = styled.section``;
 export default HomePage;

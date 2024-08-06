@@ -31,11 +31,13 @@ const Wrapper = styled.section`
   padding: 5rem 0;
   h3 {
     text-transform: none;
+    color: black;
   }
   p {
     line-height: 2;
     max-width: 45em;
-    color: var(--clr-grey-2);
+    color: var(--clr-white);
+    font-weight: bold;
   }
   .contact-form {
     width: 90vw;

@@ -5,4 +5,22 @@ import Services from './Services';
 import Contact from './Contact';
 import PageHero from './PageHero';
 import NewNav from './NewNav';
-export { Footer, Hero, Navbar, Services, Contact, PageHero, NewNav };
+import Filters from './Filters';
+import HotelList from './HotelList';
+import ListView from './ListView';
+import Hotel from './Hotel';
+import Sort from './Sort';
+export {
+  Footer,
+  Hero,
+  Navbar,
+  Services,
+  Contact,
+  PageHero,
+  NewNav,
+  Filters,
+  HotelList,
+  ListView,
+  Hotel,
+  Sort,
+};

@@ -24,6 +24,7 @@ Variables
   --clr-charcoal: #252525;
   --clr-beige: #c49c74;
   --bgclr-overlay: hsla(0, 0%, 0%, 1);
+  --clr-red-dark: hsl(360, 67%, 44%);
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius-btn: 1.5rem;
@@ -60,14 +61,20 @@ Global Styles
 * {
   transition: all 0.5s;
 }
-
+.home {
+  background: url('./assets/background.jpeg');
+}
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background: url('./assets/background.jpeg');
   color: var(--sec2);
   line-height: 1.5;
   font-size: 0.875rem;
+  background: url('./assets/background.jpeg');
   background-color: var(--clr-background);
+}
+body .none {
+  background: var(--accent-);
+  color: var(--clr-charcoal);
 }
 input::placeholder,
 textarea::placeholder {
