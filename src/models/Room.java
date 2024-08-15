@@ -20,9 +20,38 @@ public class Room {
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
+
+    // Getters and setters
+    
+    public Long getId() {
+        return id;
+    }
+    
 	public void setId(Long id2) {
 		this.id = id;	
 	}
 
-    // Getters and setters
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    public boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 }

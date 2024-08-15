@@ -30,4 +30,36 @@ public class Booking {
     private User user;
 
     // Getters and setters
+    public Long getId() {
+        return id;
+    }
+    
+	public void setId(Long id2) {
+		this.id = id;	
+	}
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+    
+    public int getNumberOfGuests() {
+        return numberOfGuests;
+    }
+
+    public void setNumberOfGuests(int numberOfGuests) {
+        this.numberOfGuests = numberOfGuests;
+    }
+
 }
