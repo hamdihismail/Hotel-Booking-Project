@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* Text Field */
+  --bordrclr-txtfield: hsla(216, 15%, 57%, 0.25);
+  --bordrclr-txtfield-danger: hsla(0, 78%, 63%, 1);
+  /* Dropdown menu  */
+  --bordrclr-dropdown-active: hsla(242, 48%, 58%, 1);
+  /* general styles */
+  --accent-: #ccc;
+  --sec2: #c9beb3;
+  --background: #1d1d1d;
+  --sec: #c49c74;
+  --primery: #252525;
+  --text-baby: #f6f6f6;
+  --clr-white: #f6f6f6;
+  --clr-grey-1: #ccc;
+  --clr-grey-2: #c9beb3;
+  --clr-charcoal: #252525;
+  --clr-beige: #c49c74;
+  --bgclr-overlay: hsla(0, 0%, 0%, 1);
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius-btn: 1.5rem;
+  --radius: 0.25rem;
+  --radius-task-card: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/* Dark and Light Mode */
+
+/* DARK */
+/* .dark-theme {
+  
+} */
+/* LIGHT */
+/* .light-theme {
+ 
+} */
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  transition: all 0.5s;
+}
+.home {
+  background: url('./assets/background.jpeg');
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--sec2);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  background: url('./assets/background.jpeg');
+  background-color: var(--clr-background);
+}
+body .none {
+  background: var(--accent-);
+  color: var(--clr-charcoal);
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.25;
+  color: black;
+  font-weight: 700;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--clr-grey-8);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* letter-spacing: var(--spacing); */
+
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  color: var(--fontclr);
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-3);
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+/* .section {
+  padding: 5rem 0;
+} */
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+.text-center {
+  text-align: center;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border-radius: 50%;
+  border: 4px solid #ccc;
+  border-top-color: var(--clr-primary-5);
+  animation: spinner 0.6s linear infinite;
+}
+
+.btn {
+  padding: 0.875rem 1.56rem;
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-btn);
+  border-color: transparent;
+}
+.primary {
+  background-color: var(--clr-beige);
+  color: var(--clr-charcoal);
+}
+.primary:hover {
+  background-color: var(--clr-grey-1);
+  color: var(--clr-charcoal);
+}
+.secondary {
+  background-color: transparent;
+  border-color: var(--clr-grey-1);
+  color: var(--clr-grey-1);
+}
+.secondary:hover {
+  border-color: transparent;
+  background-color: var(--clr-charcoal);
+  color: var(--clr-beige);
+}
+.title {
+  text-align: center;
+}
+.page-100 {
+  min-height: calc(100vh - 10rem);
+  padding: 5rem 0;
+}
+.page {
+  min-height: calc(100vh - (20vh + 10rem));
+}
+.sidebar-show {
+  display: flex;
+}
+.sidebar-hide {
+  display: none;
+}
+
+/* page overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgclr-overlay);
+  opacity: 0.5;
+  z-index: -1;
+}
+.show-overlay {
+  display: block;
+}
+.hide-overlay {
+  display: none;
+}
+
+/* Hide/Show more options */
+.hide-more-options {
+  display: none;
+}
+.show-more-options {
+  display: flex;
+}
