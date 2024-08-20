@@ -40,5 +40,6 @@
   "keywords": [],
   "devDependencies": {
     "@babel/preset-react": "^7.24.7"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

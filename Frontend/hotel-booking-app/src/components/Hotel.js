@@ -4,15 +4,26 @@ import { formatPrice } from '../utils/helpers';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import testImg from '../assets/hero-bcg-2.jpeg';
+import { useHotelsContext } from '../context/hotels_context';
 
 const Hotel = ({ image, name, city, rooms, id }) => {
+  const { fetchSingleHotel } = useHotelsContext();
+
+  const handleClick = (e) => {
+    console.log(id);
+    fetchSingleHotel(id);
+  };
+
   return (
     <Wrapper>
       <div className="container">
         <img src={testImg} alt={name} />
-        <Link to={`/hotels/${id}`} className="link">
+        <button onClick={handleClick} className="link">
           <FaSearch />
-        </Link>
+        </button>
+        {/* <Link to={`/hotels/${id}`} className="link">
+          <FaSearch />
+        </Link> */}
       </div>
       <h5>{name}</h5>
       <p>{city}</p>

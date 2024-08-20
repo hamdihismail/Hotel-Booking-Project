@@ -1,41 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { links } from '../utils/constants';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from '../context/user_context';
 
 function Login() {
-  const handleSubmit = (e) => {
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    console.log(`username is ${username.value}`);
-    console.log(`password is ${password.value}`);
+  const { loginUser } = useUserContext();
+  const navigate = useNavigate();
 
-    console.log('You clicked submit :' + e.target.type);
+  // State to store the form inputs
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Pass the username and password to the loginUser function
+    await loginUser(formData.username, formData.password);
+    navigate('/hotels');
   };
 
   return (
     <Wrapper className="page-100">
       <div className="container section-center">
-        <form className="section-center" onSubmit={(e) => e.preventDefault()}>
+        <form className="section-center" onSubmit={handleSubmit}>
           <div className="input-container">
-            <label for="username">Username</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               name="username"
               id="username"
               className="username"
+              value={formData.username}
+              onChange={handleChange}
             />
           </div>
           <div className="input-container">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
-              type="text"
+              type="password"
               name="password"
               id="password"
               className="password"
+              value={formData.password}
+              onChange={handleChange}
             />
           </div>
-          <input type="submit" className="btn primary" onClick={handleSubmit} />
+          <input type="submit" className="btn primary" value="Login" />
           <Link to="/register">
             <p className="register-link">
               Not registered? Click here to sign-up.
@@ -46,6 +64,7 @@ function Login() {
     </Wrapper>
   );
 }
+
 const Wrapper = styled.section`
   form {
     display: flex;
@@ -82,4 +101,5 @@ const Wrapper = styled.section`
     color: var(--sec2);
   }
 `;
+
 export default Login;

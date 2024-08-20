@@ -11,7 +11,7 @@ const NewNav = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="comfy sloth" />
+            <img src={logo} alt="BookMe" />
           </Link>
         </div>
         <img src={navSvg} alt="nav" />
@@ -24,11 +24,6 @@ const NewNav = () => {
               </li>
             );
           })}
-          {/* {myUser && (
-            <li>
-              <Link to='/checkout'>checkout</Link>
-            </li>
-          )} */}
         </ul>
       </div>
     </NewNavContainer>
