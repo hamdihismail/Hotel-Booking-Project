@@ -1,23 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { links } from '../utils/constants';
+import { useUserContext } from '../context/user_context';
 
 function Register() {
-  const handleSubmit = (e) => {
-    const username = document.getElementById('username');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    console.log(`username is ${username.value}`);
-    console.log(`email is ${email.value}`);
-    console.log(`password is ${password.value}`);
+  const { registerUser } = useUserContext();
+  const navigate = useNavigate();
 
-    console.log('You clicked submit :' + e.target.type);
+  // State to store the form inputs
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    role: '',
+  });
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Pass the username and password to the registerUser function
+    await registerUser(
+      formData.username,
+      formData.email,
+      formData.role,
+      formData.password
+    );
+    navigate('/hotels');
   };
   return (
     <Wrapper className="page-100">
       <div className="container section-center">
-        <form className="section-center" onSubmit={(e) => e.preventDefault()}>
+        <form className="section-center" onSubmit={handleSubmit}>
           <div className="input-container">
             <label for="username">Username</label>
             <input
@@ -25,11 +45,31 @@ function Register() {
               name="username"
               id="username"
               className="username"
+              value={formData.username}
+              onChange={handleChange}
             />
           </div>
           <div className="input-container">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" className="email" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input-container">
+            <label for="role">Role [USER,ADMIN,HOTEL]</label>
+            <input
+              type="role"
+              name="role"
+              id="role"
+              className="role"
+              value={formData.role}
+              onChange={handleChange}
+            />
           </div>
           <div className="input-container">
             <label for="password">Password</label>
@@ -38,9 +78,11 @@ function Register() {
               name="password"
               id="password"
               className="password"
+              value={formData.password}
+              onChange={handleChange}
             />
           </div>
-          <input type="submit" className="btn primary" onClick={handleSubmit} />
+          <input type="submit" className="btn primary" />
           <Link to="/login">
             <p className="register-link">
               Already registered? Click here to login.
@@ -75,7 +117,8 @@ const Wrapper = styled.section`
   }
   .username,
   .password,
-  .email {
+  .email,
+  .role {
     padding: 0.5rem;
     background: var(--clr-grey-2);
     border-radius: var(--radius);

@@ -51,10 +51,21 @@ const user_reducer = (state, action) => {
     };
   }
   if (action.type === REGISTER_USER_SUCCESS) {
+    const data = action.payload;
+    const user = {
+      username: data.username,
+      email: data.email,
+      role: data.role,
+    };
     return {
       ...state,
       register_user_loading: false,
-      user: action.payload,
+      user: {
+        ...state.user,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+      },
     };
   }
   if (action.type === REGISTER_USER_ERROR) {
