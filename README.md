@@ -1,15 +1,18 @@
 Hotel Booking Web Application
 
 Project Overview
+
 This Hotel Booking Web Application is designed to allow users to browse hotels, view room details, and make bookings. The application is built using a Spring Boot backend and a React-based frontend, providing a seamless user experience for managing hotel reservations.
 
 Features
+    
     - User registration and authentication
     - Search and filter hotels and rooms
     - Booking management (create, update, and delete bookings)
     - Responsive UI for both desktop and mobile devices
 
 Prerequisites
+    
     - Java 17+
     - Node.js and npm (for the frontend)
     - MySQL (for the database)
@@ -50,6 +53,7 @@ Frontend (React)
 Usage
 
 Once both the backend and frontend are running:
+    
     - Access the application via your browser at http://localhost:3000.
     - Register a new user account, or log in if you already have one.
     - Browse hotels, filter rooms based on preferences, and make bookings.
