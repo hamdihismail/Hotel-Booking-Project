@@ -20,6 +20,8 @@ const hotels_reducer = (state, action) => {
     return { ...state, hotels_loading: true };
   }
   if (action.type === GET_HOTELS_SUCCESS) {
+    console.log('Hotels payload: ' + action.payload);
+
     return {
       ...state,
       hotels_loading: false,

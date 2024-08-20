@@ -1,5 +1,6 @@
 import React from 'react';
 import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi';
+
 export const links = [
   {
     id: 1,
@@ -44,6 +45,10 @@ export const services = [
   },
 ];
 
-export const hotels_url = '/db/hotels.json';
+export const hotels_url = `/api/hotels`;
 
-export const single_hotel_url = ``;
+export const single_hotel_url = `/api/hotels/`;
+
+export const login_url = `/api/auth/login`;
+
+export const register_url = `/api/auth/register`;
