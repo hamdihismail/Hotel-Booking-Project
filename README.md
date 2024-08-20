@@ -18,6 +18,7 @@ Prerequisites
 Installation
 
 Backend (Spring Boot)
+    
     1. Clone the repository:
         git clone <https://github.com/hamdihismail/Hotel-Booking-Project>
     
@@ -36,6 +37,7 @@ Backend (Spring Boot)
         mvn spring-boot:run
 
 Frontend (React)
+    
     1.Navigate to the frontend directory:
         cd Hotel-Booking-Project-main/Frontend/hotel-booking-app
     
